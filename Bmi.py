@@ -1,24 +1,32 @@
-bmi=0
+bmi = 0
+
 def calculate_bmi(height, weight):
     print("Height = " + str(height))
     print("Weight = " + str(weight))
 
-#Add code here to calculate BMI
-    bmi = weight/(height*height)
+    # Calculate and return BMI
+    bmi = weight / (height * height)
 
-calculate_bmi(weight=100, height=1.65)
+    if bmi < 18.5:
+         return -1
 
-if(bmi<18.5):
+    elif 18.5 <= bmi <= 25.0:
+         return 0
+   
+    elif bmi > 25.0:
+         return 1
+    
+    # Assign the returned BMI to the global variable
+result = calculate_bmi(weight=100, height=1.65)
 
-    print("skinny bitch")
-
-elif(bmi<=18.5 and bmi<=25.0):
-
-    print("good")
-
-elif(bmi>25.0):
-
-    print("Wah fat sia")
+if result==-1:
+     print("skinny")
+elif result==0:
+     print("good")
+elif result==1:
+     print("fat sia")
 
  
 
+  
+   
